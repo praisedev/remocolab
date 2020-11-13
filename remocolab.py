@@ -254,15 +254,13 @@ def _setupSSHDMain(public_key, tunnel, ngrok_region, check_gpu_available, mount_
         print("Please specifiy the existing directory path in your Google drive like 'mount_gdrive_from = \"My Drive/somedir\"'")
         return (False, "")
 
-  #   ngrok_token = None
-  ngrok_token = "1ix2ppV7xymC24T1AsHIwAVcvRM_6yNw5eyBgVQD3y3iYESUC"
+  ngrok_token = None
 
   if tunnel == "ngrok":
     print("Copy&paste your tunnel authtoken from https://dashboard.ngrok.com/auth")
     print("(You need to sign up for ngrok and login,)")
     #Set your ngrok Authtoken.
-    # ngrok_token = getpass.getpass()
-    ngrok_token = "1ix2ppV7xymC24T1AsHIwAVcvRM_6yNw5eyBgVQD3y3iYESUC"
+    ngrok_token = getpass.getpass()
 
     if not ngrok_region:
       print("Select your ngrok region:")
